@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home"
+import About from "./components/About"
+import Navbar from "./components/Navbar";
+import DeliveryInfoPage from "./components/DeliveryInfoPage";
+import NoMatch from "./components/NoMatch";
+import Movies from "./components/Movies";
+import NewMovies from "./components/NewMovies";
+import BestMovies from "./components/BestMovies";
+import Users from "./components/Users";
+import UserDetails from "./components/UserDetails";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return ( 
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="delivery-info" element={<DeliveryInfoPage />} />
+        <Route path="*" element={<NoMatch />} />
+        <Route path="movies" element={<Movies/>}>
+          {/* <Route index element={<BestMovies/>}/> */}
+          <Route path="new-movies" element={<NewMovies/>}/>
+          <Route path="best-movies" element={<BestMovies/>}/>  
+        </Route> 
+        <Route path="users" element={<Users/>} />
+        <Route path="users/:id" element={<UserDetails/>}/>
+        {/* </Route> */}
+      </Routes>
+    
+    </>
+
   );
 }
 
