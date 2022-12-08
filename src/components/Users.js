@@ -1,13 +1,11 @@
 import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
 
-function Users(props) {
+function Users() {
     return (
         <div>
-            <Link to={"1"}>User1</Link>
-            <Link to={"2"}>User2</Link>
-            <Link to={"3"}>User3</Link>
-            <Outlet/>
+            <h3>User1</h3>
+            <h3>User2</h3>
+            <h3>User3</h3>
         </div>
     );
 }

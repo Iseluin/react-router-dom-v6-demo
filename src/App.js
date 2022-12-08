@@ -20,16 +20,16 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="delivery-info" element={<DeliveryInfoPage />} />
         <Route path="*" element={<NoMatch />} />
-        <Route path="movies" element={<Movies/>}>
-          {/* <Route index element={<BestMovies/>}/> */}
+
+        <Route path="movies" element={<Movies/>}> 
+          <Route index element={<NewMovies/>}/>
           <Route path="new-movies" element={<NewMovies/>}/>
-          <Route path="best-movies" element={<BestMovies/>}/>  
-        </Route> 
+          <Route path="best-movies" element={<BestMovies/>}/>
+        </Route>
+
         <Route path="users" element={<Users/>} />
         <Route path="users/:id" element={<UserDetails/>}/>
-        {/* </Route> */}
       </Routes>
-    
     </>
 
   );
